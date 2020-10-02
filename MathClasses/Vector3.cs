@@ -33,5 +33,14 @@ namespace MathClasses
         {
             return new Vector3(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
         }
+
+        public static Vector3 operator *(Vector3 v, float a)
+        {
+            return new Vector3(v.x * a, v.y * a, v.z * a);
+        }
+        public static Vector3 operator *(float a, Vector3 v)
+        {
+            return new Vector3(v.x * a, v.y * a, v.z * a);
+        }
     }
 }
