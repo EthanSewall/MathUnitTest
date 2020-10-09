@@ -18,24 +18,70 @@ namespace MathClasses
             m13= 0; m14= 0; m15= 0; m16= 1;
         }
 
-        public Matrix4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float m,  float n, float o, float p, float q)
+        public Matrix4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float m,  float n, float o, float p)
         {
-            m1 = a;
-            m2 = b;
-            m3 = c;
-            m4 = d;
-            m5 = e;
-            m6 = f;
-            m7 = g;
-            m8 = h;
-            m9 = i;
-            m10 = j;
-            m11 = k;
-            m12 = l;
-            m13 = m;
-            m14 = o;
-            m15 = p;
-            m16 = q;
+            m1 = a; m2 = e; m3 = i; m4 = m;
+            m5 = b; m6 = f; m7 = j; m8 = n;
+            m9 = c; m10= g; m11= k; m12= o;
+            m13= d; m14= h; m15= l; m16= p;
+        }
+   
+        public static Matrix4 operator *(Matrix4 left, Matrix4 right)
+        {
+            Matrix4 result = new Matrix4();
+            Vector4 v1;
+            Vector4 v2;
+
+            v1 = new Vector4(left.m1, left.m2, left.m3, left.m4);
+            v2 = new Vector4(right.m1, right.m5, right.m9, right.m13);
+            result.m1 = v1.Dot(v2);
+            v1 = new Vector4(left.m1, left.m2, left.m3, left.m4);
+            v2 = new Vector4(right.m2, right.m6, right.m10, right.m14);
+            result.m5 = v1.Dot(v2);
+            v1 = new Vector4(left.m1, left.m2, left.m3, left.m4);
+            v2 = new Vector4(right.m3, right.m7, right.m11, right.m15);
+            result.m9 = v1.Dot(v2);
+            v1 = new Vector4(left.m1, left.m2, left.m3, left.m4);
+            v2 = new Vector4(right.m4, right.m8, right.m12, right.m16);
+            result.m13 = v1.Dot(v2);
+            v1 = new Vector4(left.m5, left.m6, left.m7, left.m8);
+            v2 = new Vector4(right.m1, right.m5, right.m9, right.m13);
+            result.m2 = v1.Dot(v2);
+            v1 = new Vector4(left.m5, left.m6, left.m7, left.m8);
+            v2 = new Vector4(right.m2, right.m6, right.m10, right.m14);
+            result.m6 = v1.Dot(v2);
+            v1 = new Vector4(left.m5, left.m6, left.m7, left.m8);
+            v2 = new Vector4(right.m3, right.m7, right.m11, right.m15);
+            result.m10 = v1.Dot(v2);
+            v1 = new Vector4(left.m5, left.m6, left.m7, left.m8);
+            v2 = new Vector4(right.m4, right.m8, right.m12, right.m16);
+            result.m14 = v1.Dot(v2);
+            v1 = new Vector4(left.m9, left.m10, left.m11, left.m12);
+            v2 = new Vector4(right.m1, right.m5, right.m9, right.m13);
+            result.m3 = v1.Dot(v2);
+            v1 = new Vector4(left.m9, left.m10, left.m11, left.m12);
+            v2 = new Vector4(right.m2, right.m6, right.m10, right.m14);
+            result.m7 = v1.Dot(v2);
+            v1 = new Vector4(left.m9, left.m10, left.m11, left.m12);
+            v2 = new Vector4(right.m3, right.m7, right.m11, right.m15);
+            result.m11 = v1.Dot(v2);
+            v1 = new Vector4(left.m9, left.m10, left.m11, left.m12);
+            v2 = new Vector4(right.m4, right.m8, right.m12, right.m16);
+            result.m15 = v1.Dot(v2);
+            v1 = new Vector4(left.m13, left.m14, left.m15, left.m16);
+            v2 = new Vector4(right.m1, right.m5, right.m9, right.m13);
+            result.m4 = v1.Dot(v2);
+            v1 = new Vector4(left.m13, left.m14, left.m15, left.m16);
+            v2 = new Vector4(right.m2, right.m6, right.m10, right.m14);
+            result.m8 = v1.Dot(v2);
+            v1 = new Vector4(left.m13, left.m14, left.m15, left.m16);
+            v2 = new Vector4(right.m3, right.m7, right.m11, right.m15);
+            result.m12 = v1.Dot(v2);
+            v1 = new Vector4(left.m13, left.m14, left.m15, left.m16);
+            v2 = new Vector4(right.m4, right.m8, right.m12, right.m16);
+            result.m16 = v1.Dot(v2);
+
+            return result;
         }
     }
 }

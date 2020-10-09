@@ -19,15 +19,46 @@ namespace MathClasses
 
         public Matrix3(float a, float b, float c, float d, float e, float f, float g, float h, float i)
         {
-            m1 = a;
-            m2 = b;
-            m3 = c;
-            m4 = d;
-            m5 = e;
-            m6 = f;
-            m7 = g;
-            m8 = h;
-            m9 = i;
+            m1 = a;  m2 = d;  m3 = g;
+            m4 = b;  m5 = e;  m6 = h;
+            m7 = c;  m8 = f;  m9 = i;
+        }
+
+        public static Matrix3 operator *(Matrix3 left, Matrix3 right)
+        {
+            Matrix3 result = new Matrix3();
+            Vector3 v1;
+            Vector3 v2;
+
+            v1 = new Vector3(left.m1, left.m2, left.m3);
+            v2 = new Vector3(right.m1, right.m4, right.m7);
+            result.m1 = v1.Dot(v2);
+            v1 = new Vector3(left.m1, left.m2, left.m3);
+            v2 = new Vector3(right.m2, right.m5, right.m8);
+            result.m4 = v1.Dot(v2);
+            v1 = new Vector3(left.m1, left.m2, left.m3);
+            v2 = new Vector3(right.m3, right.m6, right.m9);
+            result.m7 = v1.Dot(v2);
+            v1 = new Vector3(left.m4, left.m5, left.m6);
+            v2 = new Vector3(right.m1, right.m4, right.m7);
+            result.m2 = v1.Dot(v2);
+            v1 = new Vector3(left.m4, left.m5, left.m6);
+            v2 = new Vector3(right.m2, right.m5, right.m8);
+            result.m5 = v1.Dot(v2);
+            v1 = new Vector3(left.m4, left.m5, left.m6);
+            v2 = new Vector3(right.m3, right.m6, right.m9);
+            result.m8 = v1.Dot(v2);
+            v1 = new Vector3(left.m7, left.m8, left.m9);
+            v2 = new Vector3(right.m1, right.m4, right.m7);
+            result.m3 = v1.Dot(v2);
+            v1 = new Vector3(left.m7, left.m8, left.m9);
+            v2 = new Vector3(right.m2, right.m5, right.m8);
+            result.m6 = v1.Dot(v2);
+            v1 = new Vector3(left.m7, left.m8, left.m9);
+            v2 = new Vector3(right.m3, right.m6, right.m9);
+            result.m9 = v1.Dot(v2);
+
+            return result;
         }
 
     }
