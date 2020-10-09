@@ -18,5 +18,24 @@ namespace MathClasses
             m13= 0; m14= 0; m15= 0; m16= 1;
         }
 
+        public Matrix4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float m,  float n, float o, float p, float q)
+        {
+            m1 = a;
+            m2 = b;
+            m3 = c;
+            m4 = d;
+            m5 = e;
+            m6 = f;
+            m7 = g;
+            m8 = h;
+            m9 = i;
+            m10 = j;
+            m11 = k;
+            m12 = l;
+            m13 = m;
+            m14 = o;
+            m15 = p;
+            m16 = q;
+        }
     }
 }

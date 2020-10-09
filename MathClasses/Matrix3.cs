@@ -17,5 +17,18 @@ namespace MathClasses
             m7 = 0; m8 = 0; m9 = 1;
         }
 
+        public Matrix3(float a, float b, float c, float d, float e, float f, float g, float h, float i)
+        {
+            m1 = a;
+            m2 = b;
+            m3 = c;
+            m4 = d;
+            m5 = e;
+            m6 = f;
+            m7 = g;
+            m8 = h;
+            m9 = i;
+        }
+
     }
 }
