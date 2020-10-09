@@ -52,5 +52,15 @@ namespace MathClasses
         {
             return new Vector3(y * v.z - z * v.y,z * v.x - x * v.z,(x * v.y - y * v.x));
         }
+
+        public float Magnitude()
+        {
+            return (float)Math.Sqrt((x * x) + (y * y) + (z * z));
+        }
+
+        public Vector3 Normalize()
+        {
+            return new Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
+        }
     }
 }

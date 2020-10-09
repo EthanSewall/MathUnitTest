@@ -45,5 +45,24 @@ namespace MathClasses
             return new Vector4(v.x * a, v.y * a, v.z * a, v.w * a);
         }
 
+        public Vector4 Cross(Vector4 v)
+        {
+            return new Vector4(y * v.z - z * v.y, z * v.x - x * v.z, (x * v.y - y * v.x), 0);
+        }
+
+        public float Dot(Vector4 v)
+        {
+            return (x * v.x) + (y + v.y) + (z * v.z) + (w * v.w);
+        }
+
+        public float Magnitude()
+        {
+            return (float)Math.Sqrt((x * x) + (y * y) + (z * z) + (w * w));
+        }
+
+        public Vector4 Normalize()
+        {
+            return new Vector4(x / Magnitude(), y / Magnitude(), z / Magnitude(), w/Magnitude());
+        }
     }
 }
