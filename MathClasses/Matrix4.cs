@@ -83,5 +83,16 @@ namespace MathClasses
 
             return result;
         }
+
+        public static Vector4 operator *(Matrix4 left, Vector4 right)
+        {
+            Vector4 result = new Vector4();
+            result.x = right.Dot(new Vector4(left.m1, left.m5, left.m9, left.m13));
+            result.y = right.Dot(new Vector4(left.m2, left.m6, left.m10, left.m14));
+            result.z = right.Dot(new Vector4(left.m3, left.m7, left.m11, left.m15));
+            result.w = right.Dot(new Vector4(left.m4, left.m8, left.m12, left.m16));
+
+            return result;
+        }
     }
 }

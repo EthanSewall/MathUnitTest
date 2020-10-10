@@ -61,5 +61,13 @@ namespace MathClasses
             return result;
         }
 
+        public static Vector3 operator *(Matrix3 left, Vector3 right)
+        {
+            Vector3 result = new Vector3();
+            result.x = right.Dot(new Vector3(left.m1, left.m4, left.m7));
+            result.y = right.Dot(new Vector3(left.m2, left.m5, left.m8));
+            result.z = right.Dot(new Vector3(left.m3, left.m6, left.m9));
+            return result;
+        }
     }
 }
