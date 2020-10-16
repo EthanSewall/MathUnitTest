@@ -493,7 +493,6 @@ namespace UnitTestProject
             Assert.AreEqual<byte>(c.GetGreen(), 0x34);
         }
 
-
         [TestMethod]
         public void ColourGetBlue()
         {

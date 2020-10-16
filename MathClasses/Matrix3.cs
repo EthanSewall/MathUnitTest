@@ -86,7 +86,7 @@ namespace MathClasses
             m7 = mNew.m7; m8 = mNew.m8; m9 = mNew.m9;
         }
 
-        public void SetRotatez(float a)
+        public void SetRotateZ(float a)
         {
             Matrix3 mNew = this * new Matrix3((float)Math.Cos(a), (float)-Math.Sin(a), 0, (float)Math.Sin(a), (float)Math.Cos(a), 0, 0, 0, 1);
             m1 = mNew.m1; m2 = mNew.m2; m3 = mNew.m3;
