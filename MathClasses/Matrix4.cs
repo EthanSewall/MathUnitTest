@@ -94,5 +94,32 @@ namespace MathClasses
 
             return result;
         }
+
+        public void SetRotateX(float a)
+        {
+            Matrix4 mNew = this * new Matrix4(1, 0, 0, 0,   0,(float)Math.Cos(a), (float)-Math.Sin(a), 0,    0, (float)Math.Sin(a), (float)Math.Cos(a), 0,     0,0,0,1);
+            m1 = mNew.m1; m2 = mNew.m2; m3 = mNew.m3; m4 = mNew.m4;
+            m5 = mNew.m5; m6 = mNew.m6; m7 = mNew.m7; m8 = mNew.m8; 
+            m9 = mNew.m9; m10 = mNew.m10; m11 = mNew.m11; m12 = mNew.m12;
+            m13 = mNew.m13; m14 = mNew.m14; m15 = mNew.m15; m16 = mNew.m16;
+        }
+
+        public void SetRotateY(float a)
+        {
+            Matrix4 mNew = this * new Matrix4((float)Math.Cos(a), 0, (float)-Math.Sin(a), 0,    0, 1, 0, 0,    (float)-Math.Sin(a), 0, (float)Math.Cos(a), 0,    0, 0, 0, 1);
+            m1 = mNew.m1; m2 = mNew.m2; m3 = mNew.m3; m4 = mNew.m4;
+            m5 = mNew.m5; m6 = mNew.m6; m7 = mNew.m7; m8 = mNew.m8;
+            m9 = mNew.m9; m10 = mNew.m10; m11 = mNew.m11; m12 = mNew.m12;
+            m13 = mNew.m13; m14 = mNew.m14; m15 = mNew.m15; m16 = mNew.m16;
+        }
+
+        public void SetRotateZ(float a)
+        {
+            Matrix4 mNew = this * new Matrix4((float)Math.Cos(a), (float)-Math.Sin(a), 0, 0,    (float)Math.Sin(a), (float)Math.Cos(a), 0, 0,    0, 0, 1, 0,    0, 0, 0, 1);
+            m1 = mNew.m1; m2 = mNew.m2; m3 = mNew.m3; m4 = mNew.m4;
+            m5 = mNew.m5; m6 = mNew.m6; m7 = mNew.m7; m8 = mNew.m8;
+            m9 = mNew.m9; m10 = mNew.m10; m11 = mNew.m11; m12 = mNew.m12;
+            m13 = mNew.m13; m14 = mNew.m14; m15 = mNew.m15; m16 = mNew.m16;
+        }
     }
 }
