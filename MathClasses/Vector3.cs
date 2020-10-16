@@ -58,9 +58,12 @@ namespace MathClasses
             return (float)Math.Sqrt((x * x) + (y * y) + (z * z));
         }
 
-        public Vector3 Normalize()
+        public void Normalize()
         {
-            return new Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
+            Vector3 v = new Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
+            x = v.x;
+            y = v.y;
+            z = v.z;
         }
     }
 }

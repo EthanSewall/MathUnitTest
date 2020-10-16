@@ -60,9 +60,13 @@ namespace MathClasses
             return (float)Math.Sqrt((x * x) + (y * y) + (z * z) + (w * w));
         }
 
-        public Vector4 Normalize()
+        public void Normalize()
         {
-            return new Vector4(x / Magnitude(), y / Magnitude(), z / Magnitude(), w/Magnitude());
+            Vector4 v = new Vector4(x / Magnitude(), y / Magnitude(), z / Magnitude(), w/Magnitude());
+            x = v.x;
+            y = v.y;
+            z = v.z;
+            w = v.w;
         }
     }
 }
