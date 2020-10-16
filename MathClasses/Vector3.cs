@@ -45,7 +45,7 @@ namespace MathClasses
 
         public float Dot(Vector3 v)
         {
-            return (x * v.x) + (y + v.y) + (z * v.z);
+            return (x * v.x) + (y * v.y) + (z * v.z);
         }
 
         public Vector3 Cross(Vector3 v)
