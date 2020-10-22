@@ -10,28 +10,24 @@ namespace MathClasses
     {
         static void Main(string[] args)
         {
-            Matrix3 m3a = new Matrix3();
-            m3a.SetRotateX(3.98f);
-
             Matrix3 m3c = new Matrix3();
-            m3c.SetRotateZ(9.62f);
+            m3c.SetRotateZ(2.2f);
+            m3c.m7 = 55; m3c.m8 = 44; m3c.m9 = 1;
+            
 
-            Matrix3 m3d = m3a * m3c;
+            Vector3 v3a = new Vector3(13.5f, -48.23f, 1);
 
-            Console.WriteLine(m3a.m1.ToString() + ", " + m3a.m2.ToString() + ", " + m3a.m3.ToString() + ", ");
-            Console.WriteLine(m3a.m4.ToString() + ", " + m3a.m5.ToString() + ", " + m3a.m6.ToString() + ", ");
-            Console.WriteLine(m3a.m7.ToString() + ", " + m3a.m8.ToString() + ", " + m3a.m9.ToString() + ", ");
-            Console.WriteLine();
+            Vector3 v3c = m3c * v3a;
 
             Console.WriteLine(m3c.m1.ToString() + ", " + m3c.m2.ToString() + ", " + m3c.m3.ToString() + ", ");
             Console.WriteLine(m3c.m4.ToString() + ", " + m3c.m5.ToString() + ", " + m3c.m6.ToString() + ", ");
-            Console.WriteLine(m3c.m7.ToString() + ", " + m3c.m8.ToString() + ", " + m3c.m9.ToString() + ", ");
+            Console.WriteLine(m3c.m7.ToString() + ", " + m3c.m8.ToString() + ", " + m3c.m9.ToString());
             Console.WriteLine();
-
-            Console.WriteLine(m3d.m1.ToString() + ", " + m3d.m2.ToString() + ", " + m3d.m3.ToString() + ", ");
-            Console.WriteLine(m3d.m4.ToString() + ", " + m3d.m5.ToString() + ", " + m3d.m6.ToString() + ", ");
-            Console.WriteLine(m3d.m7.ToString() + ", " + m3d.m8.ToString() + ", " + m3d.m9.ToString() + ", ");
+            Console.WriteLine(v3a.x.ToString() + ", " + v3a.y.ToString() + ", " + v3a.z.ToString());
+            Console.WriteLine(); 
             Console.WriteLine();
+            Console.WriteLine(v3c.x.ToString() + ", " + v3c.y.ToString() + ", " + v3c.z.ToString());
+            
 
             Console.ReadKey();
         }
